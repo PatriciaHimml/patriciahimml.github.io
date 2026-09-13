@@ -1,0 +1,372 @@
+/* ============================================================
+   Jasmine tea palette
+   ============================================================ */
+:root {
+  --cream: #f7f2e4;       /* pale jasmine petal — page background */
+  --card: #efe7d1;        /* deeper cream — panels, dividers */
+  --ink: #362f24;         /* steeped tea, near-black brown — text */
+  --ink-soft: #6b6151;    /* faded tea leaf — secondary text */
+  --sage: #7c8a63;        /* jasmine leaf green — structure, borders */
+  --sage-pale: #e3e6d3;   /* pale leaf tint — subtle backgrounds */
+  --gold: #ab8a2c;        /* jasmine blossom gold — the one accent */
+  --gold-dim: #ab8a2c33;  /* translucent gold for focus rings */
+
+  --serif: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --sans: "Karla", "Helvetica Neue", Arial, sans-serif;
+
+  --measure: 40rem;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--gold);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--ink); }
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+img { max-width: 100%; display: block; }
+
+/* ============================================================
+   Layout shell
+   ============================================================ */
+.shell {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 1.75rem;
+}
+
+/* ============================================================
+   Header / nav — jasmine sprig mark instead of a generic avatar
+   ============================================================ */
+header.site-header {
+  border-bottom: 1px solid var(--card);
+}
+
+.site-header .shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand svg { width: 26px; height: 26px; flex-shrink: 0; }
+.brand span {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+nav.primary-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.6rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav.primary-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.96rem;
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+}
+
+nav.primary-nav a:hover,
+nav.primary-nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--gold);
+}
+
+/* ============================================================
+   Hero — asymmetric two-column
+   ============================================================ */
+.hero {
+  padding: 3.5rem 0 3rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.eyebrow {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--sage);
+  font-size: 1.05rem;
+  margin: 0 0 0.35rem;
+}
+
+h1.name {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  font-weight: 600;
+  line-height: 1.08;
+  margin: 0 0 1.3rem;
+  color: var(--ink);
+}
+
+.bio {
+  max-width: var(--measure);
+  color: var(--ink);
+}
+
+.bio p { margin: 0 0 1rem; }
+.bio strong { color: var(--ink); }
+
+.hero-actions {
+  display: flex;
+  gap: 0.9rem;
+  margin-top: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.25rem;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  border: 1px solid var(--ink);
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--cream);
+}
+.btn-primary:hover { background: var(--sage); border-color: var(--sage); color: var(--cream); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--card);
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--ink); }
+
+/* Meta panel — bordered card, sage hairline, gold rule accent */
+.meta-panel {
+  background: var(--sage-pale);
+  border: 1px solid var(--card);
+  border-radius: 4px;
+  padding: 1.6rem 1.6rem 1.4rem;
+}
+
+.meta-panel .avatar {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 3px;
+  background: var(--card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1.3rem;
+  border: 1px dashed var(--sage);
+}
+
+dl.meta-list {
+  margin: 0;
+}
+dl.meta-list div {
+  padding: 0.65rem 0;
+  border-top: 1px solid var(--card);
+}
+dl.meta-list div:first-child { border-top: none; }
+
+dl.meta-list dt {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  margin: 0 0 0.15rem;
+}
+dl.meta-list dd {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+/* ============================================================
+   Interest tags
+   ============================================================ */
+ul.tag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  padding: 0;
+  margin: 1.6rem 0 0;
+}
+ul.tag-list li {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--sage);
+  border-radius: 999px;
+  color: var(--sage);
+  background: var(--cream);
+}
+
+/* ============================================================
+   Section blocks
+   ============================================================ */
+section.block {
+  padding: 2.6rem 0;
+  border-top: 1px solid var(--card);
+}
+
+.block-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+h2.block-title {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.block-intro {
+  color: var(--ink-soft);
+  max-width: var(--measure);
+  margin: -0.6rem 0 1.4rem;
+}
+
+.see-all {
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Entry list — used for research & teaching items */
+ul.entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.entry-list li {
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--card);
+}
+ul.entry-list li:first-child { border-top: none; }
+
+.entry-title {
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  margin: 0 0 0.3rem;
+  color: var(--ink);
+}
+.entry-title a { color: inherit; text-decoration: none; }
+.entry-title a:hover { color: var(--gold); }
+
+.entry-meta {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin: 0 0 0.35rem;
+}
+
+.entry-note {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.status-pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: var(--sage-pale);
+  color: var(--sage);
+  margin-left: 0.5rem;
+  position: relative;
+  top: -1px;
+}
+
+/* ============================================================
+   Placeholder callouts — visible reminders for the user
+   ============================================================ */
+.placeholder {
+  background: #fff9e8;
+  border: 1px dashed var(--gold);
+  color: #7a6317;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 3px;
+  margin: 0.5rem 0 0;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer.site-footer {
+  border-top: 1px solid var(--card);
+  margin-top: 1rem;
+}
+footer.site-footer .shell {
+  padding: 2rem 1.75rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+footer.site-footer a { color: var(--ink-soft); }
+footer.site-footer a:hover { color: var(--gold); }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 720px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .meta-panel { order: -1; max-width: 22rem; }
+  nav.primary-nav ul { gap: 1.1rem; flex-wrap: wrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
