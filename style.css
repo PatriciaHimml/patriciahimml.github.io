@@ -189,9 +189,8 @@ h1.name {
 
 .meta-panel .avatar {
   width: 100%;
-  aspect-ratio: 1;
+  height: auto;
   border-radius: 3px;
-  object-fit: cover;
   margin-bottom: 1.3rem;
 }
 
