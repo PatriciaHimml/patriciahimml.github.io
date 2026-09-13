@@ -301,6 +301,26 @@ ul.entry-list li:first-child { border-top: none; }
 .entry-title a { color: inherit; text-decoration: none; }
 .entry-title a:hover { color: var(--gold); }
 
+.entry-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+.entry-row .entry-title { margin: 0; }
+.entry-year {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+h3.group-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+
 .entry-meta {
   font-size: 0.88rem;
   color: var(--ink-soft);
