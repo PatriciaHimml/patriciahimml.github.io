@@ -315,6 +315,39 @@ h3.group-title {
   color: var(--ink-soft);
   margin: 0 0 0.35rem;
 }
+.entry-joint {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  margin: 0 0 0.7rem;
+}
+
+details.abstract {
+  margin: 0.4rem 0;
+}
+details.abstract summary {
+  cursor: pointer;
+  color: var(--gold);
+  font-size: 0.92rem;
+  list-style: none;
+}
+details.abstract summary::-webkit-details-marker {
+  display: none;
+}
+details.abstract summary::before {
+  content: "+ ";
+}
+details.abstract[open] summary::before {
+  content: "\2212 ";
+}
+details.abstract[open] summary {
+  margin-bottom: 0.6rem;
+}
+
+.presented-at {
+  margin-top: 1.1rem;
+  font-family: var(--serif);
+  font-style: italic;
+}
 
 .entry-note {
   font-size: 0.92rem;
